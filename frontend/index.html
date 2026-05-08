@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeVault - Your Personal Time Capsule</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="TimeVault - Create time capsules and send messages to your future self. A beautiful, futuristic web application for preserving memories and dreams." />
+    <style>
+      /* Hide scrollbars globally */
+      * {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+      }
+      
+      *::-webkit-scrollbar {
+        display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+      }
+      
+      /* Ensure the body and html also have no scrollbars */
+      html, body {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      
+      /* Hide scrollbars on specific elements that might have overflow */
+      .overflow-auto,
+      .overflow-scroll,
+      .overflow-y-auto,
+      .overflow-y-scroll {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      
+      .overflow-auto::-webkit-scrollbar,
+      .overflow-scroll::-webkit-scrollbar,
+      .overflow-y-auto::-webkit-scrollbar,
+      .overflow-y-scroll::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script>
+      // Prevent flash of unstyled content by setting theme before app loads
+      (function() {
+        const savedTheme = localStorage.getItem('theme')
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark')
+        } else if (savedTheme === 'light') {
+          document.documentElement.classList.add('light')
+        } else {
+          // Auto theme - check system preference
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.add('light')
+          }
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html> 

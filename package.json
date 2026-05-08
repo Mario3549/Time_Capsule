@@ -1,0 +1,25 @@
+{
+  "name": "timevault",
+  "version": "1.0.0",
+  "description": "TimeVault - A futuristic Time Capsule web application",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "preview": "npm run preview --workspace=frontend",
+    "server": "npm run dev --workspace=backend",
+    "dev:full": "concurrently \"npm run dev --workspace=frontend\" \"npm run server --workspace=backend\"",
+    "install:all": "npm install && npm install --workspace=frontend && npm install --workspace=backend",
+    "lint": "npm run lint --workspace=frontend"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
